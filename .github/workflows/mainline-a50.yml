@@ -306,6 +306,8 @@ jobs:
     if: always()
     needs: [oneui, aosp, oneui_nonroot, aosp_nonroot, snowcone, snowcone_nonroot]
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write
     strategy:
       fail-fast: true
     steps:
