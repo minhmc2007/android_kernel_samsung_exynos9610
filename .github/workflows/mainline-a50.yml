@@ -23,11 +23,11 @@ jobs:
         timezoneWindows: "Philippine Standard Time"
 
     - name: Export build branch
-      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: branch_name
+      run: echo "branch=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
 
     - name: Install Debian/Ubuntu dependencies
-      run: sudo apt-get install bzip2 lib32stdc++6 libc6-dev-i386 libncurses5 -y
+      run: sudo apt-get install -y bzip2 lib32stdc++6 libc6-dev-i386 libncurses-dev
 
     - name: Build Mint kernel
       run: |
@@ -65,11 +65,11 @@ jobs:
         timezoneWindows: "Philippine Standard Time"
 
     - name: Export build branch
-      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: branch_name
+      run: echo "branch=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
 
     - name: Install Debian/Ubuntu dependencies
-      run: sudo apt-get install bzip2 lib32stdc++6 libc6-dev-i386 libncurses5 -y
+      run: sudo apt-get install -y bzip2 lib32stdc++6 libc6-dev-i386 libncurses-dev
 
     - name: Build Mint kernel
       run: |
@@ -107,11 +107,11 @@ jobs:
         timezoneWindows: "Philippine Standard Time"
 
     - name: Export build branch
-      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: branch_name
+      run: echo "branch=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
 
     - name: Install Debian/Ubuntu dependencies
-      run: sudo apt-get install bzip2 lib32stdc++6 libc6-dev-i386 libncurses5 -y
+      run: sudo apt-get install -y bzip2 lib32stdc++6 libc6-dev-i386 libncurses-dev
 
     - name: Build Mint kernel
       run: |
@@ -149,11 +149,11 @@ jobs:
         timezoneWindows: "Philippine Standard Time"
 
     - name: Export build branch
-      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: branch_name
+      run: echo "branch=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
 
     - name: Install Debian/Ubuntu dependencies
-      run: sudo apt-get install bzip2 lib32stdc++6 libc6-dev-i386 libncurses5 -y
+      run: sudo apt-get install -y bzip2 lib32stdc++6 libc6-dev-i386 libncurses-dev
 
     - name: Build Mint kernel
       run: |
@@ -191,11 +191,11 @@ jobs:
         timezoneWindows: "Philippine Standard Time"
 
     - name: Export build branch
-      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: branch_name
+      run: echo "branch=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
 
     - name: Install Debian/Ubuntu dependencies
-      run: sudo apt-get install bzip2 lib32stdc++6 libc6-dev-i386 libncurses5 -y
+      run: sudo apt-get install -y bzip2 lib32stdc++6 libc6-dev-i386 libncurses-dev
 
     - name: Build Mint kernel
       run: |
@@ -233,11 +233,11 @@ jobs:
         timezoneWindows: "Philippine Standard Time"
 
     - name: Export build branch
-      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: branch_name
+      run: echo "branch=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
 
     - name: Install Debian/Ubuntu dependencies
-      run: sudo apt-get install bzip2 lib32stdc++6 libc6-dev-i386 libncurses5 -y
+      run: sudo apt-get install -y bzip2 lib32stdc++6 libc6-dev-i386 libncurses-dev
 
     - name: Build Mint kernel
       run: |
@@ -275,11 +275,11 @@ jobs:
         timezoneWindows: "Philippine Standard Time"
 
     - name: Export build branch
-      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: branch_name
+      run: echo "branch=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
 
     - name: Install Debian/Ubuntu dependencies
-      run: sudo apt-get install bzip2 lib32stdc++6 libc6-dev-i386 libncurses5 -y
+      run: sudo apt-get install -y bzip2 lib32stdc++6 libc6-dev-i386 libncurses-dev
 
     - name: Build Mint kernel
       run: |
