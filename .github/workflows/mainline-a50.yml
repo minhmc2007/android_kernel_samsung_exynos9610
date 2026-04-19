@@ -14,7 +14,7 @@ jobs:
       fail-fast: true
       
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - uses: szenius/set-timezone@v1.0
       with:
@@ -42,7 +42,7 @@ jobs:
           mv -f `find ./ -iname Mint-*.zip` ./release/
 
     - name: Upload release package
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: oneui_mainline-${{ github.run_number }}
         path: 'release'
@@ -56,7 +56,7 @@ jobs:
       fail-fast: true
       
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - uses: szenius/set-timezone@v1.0
       with:
@@ -84,7 +84,7 @@ jobs:
           mv -f `find ./ -iname Mint-*.zip` ./release/
 
     - name: Upload release package
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: aosp_mainline-${{ github.run_number }}
         path: 'release'
@@ -98,7 +98,7 @@ jobs:
       fail-fast: true
       
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - uses: szenius/set-timezone@v1.0
       with:
@@ -126,7 +126,7 @@ jobs:
           mv -f `find ./ -iname Mint-*.zip` ./release/
 
     - name: Upload release package
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: snowcone_mainline-${{ github.run_number }}
         path: 'release'
@@ -140,7 +140,7 @@ jobs:
       fail-fast: true
       
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - uses: szenius/set-timezone@v1.0
       with:
@@ -168,7 +168,7 @@ jobs:
           mv -f `find ./ -iname Mint-*.zip` ./release/
 
     - name: Upload release package
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: oneui-noroot_mainline-${{ github.run_number }}
         path: 'release'
@@ -182,7 +182,7 @@ jobs:
       fail-fast: true
       
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - uses: szenius/set-timezone@v1.0
       with:
@@ -210,7 +210,7 @@ jobs:
           mv -f `find ./ -iname Mint-*.zip` ./release/
 
     - name: Upload release package
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: aosp-noroot_mainline-${{ github.run_number }}
         path: 'release'
@@ -224,7 +224,7 @@ jobs:
       fail-fast: true
       
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - uses: szenius/set-timezone@v1.0
       with:
@@ -252,7 +252,7 @@ jobs:
           mv -f `find ./ -iname Mint-*.zip` ./release/
 
     - name: Upload release package
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: snowcone-noroot_mainline-${{ github.run_number }}
         path: 'release'
@@ -266,7 +266,7 @@ jobs:
       fail-fast: true
       
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - uses: szenius/set-timezone@v1.0
       with:
@@ -289,9 +289,9 @@ jobs:
           ./build.sh --automated --device a50 --variant recovery
 
     - name: Upload kernel image artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
-        name: Recovery Kernel (mainline-${{ github.run_number }}
+        name: Recovery Kernel (mainline-${{ github.run_number }})
         path: './Image'
         if-no-files-found: error
 
@@ -303,7 +303,7 @@ jobs:
     strategy:
       fail-fast: true
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - uses: szenius/set-timezone@v1.0
       with:
@@ -312,37 +312,37 @@ jobs:
         timezoneWindows: "Philippine Standard Time"
 
     - name: Merge One UI Release
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: oneui_mainline-${{ github.run_number }}
         path: release
       
     - name: Merge Lineage/AOSP 11 release
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: aosp_mainline-${{ github.run_number }}
         path: release
 
     - name: Merge Lineage/AOSP 12 release
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: snowcone_mainline-${{ github.run_number }}
         path: release
       
     - name: Merge One UI (nonroot) release
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: oneui-noroot_mainline-${{ github.run_number }}
         path: release
       
     - name: Merge Lineage/AOSP (nonroot) release
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: aosp-noroot_mainline-${{ github.run_number }}
         path: release
       
     - name: Merge Lineage/AOSP 12 (nonroot) release
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: snowcone-noroot_mainline-${{ github.run_number }}
         path: release
@@ -360,7 +360,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        # The name of the tag
         tag_name: mainline-${{ github.run_number }}_a50dx
         release_name: Galaxy A50 (mainline-${{ github.run_number }})
         body_path: "./tools/make/release/a50.md"
