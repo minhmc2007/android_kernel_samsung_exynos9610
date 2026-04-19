@@ -8,7 +8,7 @@ on:
 jobs:
   oneui:
     name: Build One UI
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     strategy:
       fail-fast: true
@@ -50,7 +50,7 @@ jobs:
 
   aosp:
     name: Build Lineage/AOSP 11
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     strategy:
       fail-fast: true
@@ -92,7 +92,7 @@ jobs:
 
   snowcone:
     name: Build Lineage/AOSP 12
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     strategy:
       fail-fast: true
@@ -134,7 +134,7 @@ jobs:
 
   oneui_nonroot:
     name: Build One UI - Non-root
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     strategy:
       fail-fast: true
@@ -176,7 +176,7 @@ jobs:
 
   aosp_nonroot:
     name: Build Lineage/AOSP 11 - Non-root
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     strategy:
       fail-fast: true
@@ -218,7 +218,7 @@ jobs:
 
   snowcone_nonroot:
     name: Build Lineage/AOSP 12 - Non-root
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     strategy:
       fail-fast: true
@@ -260,7 +260,7 @@ jobs:
 
   recovery:
     name: Build Recovery Kernel
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     strategy:
       fail-fast: true
@@ -299,7 +299,7 @@ jobs:
     name: Release files and configs
     if: always()
     needs: [oneui, aosp, oneui_nonroot, aosp_nonroot, snowcone, snowcone_nonroot]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: true
     steps:
