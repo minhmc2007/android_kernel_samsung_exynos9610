@@ -3,6 +3,9 @@ name: Update KernelSU
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -20,7 +23,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if ! git diff --quiet; then
+          # Using git status --porcelain is more reliable for checking dirty submodules
+          if [[ -n $(git status --porcelain) ]]; then
             COMMIT=$(cd "KernelSU" && git rev-parse --short HEAD)
 
             git commit -am "KernelSU: update to '$COMMIT'"
